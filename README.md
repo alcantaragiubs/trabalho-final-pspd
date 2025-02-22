@@ -16,7 +16,7 @@ O objetivo principal é avaliar o comportamento do Kubernetes em um ambiente de 
 A execução do projeto envolve a instalação e configuração do cluster Kubernetes, a implementação de uma aplicação de teste e a condução de experimentos que simulam falhas e variações na carga de trabalho. A partir dos resultados obtidos, será possível avaliar os benefícios e desafios do uso do Kubernetes para computação paralela e distribuída, bem como sua integração com outras tecnologias.
 
 #### Metodologia
-Para a realização da atividade proposta
+Para a realização da atividade proposta, o grupo se organizou de forma a seguir o roteiro do trabalho final. No primeiro encontro, foram definidas as responsabilidades de cada membro e o planejamento das etapas do trabalho. Foram realizados encontros diário para o desenvolvimento do trabalho. Cada reunião resultou em decisões concretas sobre a execução das atividades, garantindo a divisão equilibrada do trabalho e o cumprimento dos prazos estabelecidos. O grupo foi subdividido logicamente em 2 para esse trabalho, onde um cuidou das configurações do kubernetes e outro do desenvolvimento da aplicação
 
 # Cluster Kubernetes
 ## O que é 
