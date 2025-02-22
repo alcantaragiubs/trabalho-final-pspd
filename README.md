@@ -73,8 +73,9 @@ Em resumo, Kubernetes é uma solução poderosa para automatizar a implantação
     ```
   - Após, dê os comandos:
     ```bash
-    kubectl apply -f sample-app.yaml
+    kubectl apply -f metrics-server.yaml
     kubectl top nodes
+    kubectl apply -f sample-app.yaml
     ```
   - Entre na URL: [https://10.0.0.1:32000](https://localhost:32000)
 ##### Criação do Dashboard de Monitoramento:
