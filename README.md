@@ -28,7 +28,7 @@ Além da estrutura básica, Kubernetes possui mecanismos para gerenciar a comuni
 
 Em resumo, Kubernetes é uma solução poderosa para automatizar a implantação, escala e operação de aplicativos baseados em contêineres. Ele simplifica a gestão da infraestrutura, garantindo eficiência, flexibilidade e alta disponibilidade para aplicações modernas. [1]
 
-![image](https://github.com/user-attachments/assets/c295adb0-33f0-47f0-ba79-26536bf32155)
+![image](https://github.com/user-attachments/assets/f13e50c9-beed-48a1-875c-41ab9c8cd49e)
 
 
 ##### Passo a Passo de Montagem 
@@ -184,6 +184,25 @@ Em resumo, Kubernetes é uma solução poderosa para automatizar a implantação
 ![image](https://github.com/user-attachments/assets/fd156a13-7061-4bef-87e6-0f56a9146e86)
 
 ###### 2. Teste de Escalabilidade e Escalonamento:
+- Criando mais replicas:
+![image](https://github.com/user-attachments/assets/ad9c922c-1e18-4e81-b508-1270ed47e686)
+- Analisando criação:
+![image](https://github.com/user-attachments/assets/38180178-bec2-4968-81a5-894f48f5c07e)
+- Criou com um nó ficando pendente:
+![image](https://github.com/user-attachments/assets/aa110a1e-d7b8-4d62-8201-175bb907b258)
+- No dashboard:
+![image](https://github.com/user-attachments/assets/150c20b0-c859-4596-9b48-14be9f7c230a)
+- Erro apresentado no nó:
+![image](https://github.com/user-attachments/assets/c976e097-eb45-44b9-b099-08c8daa56bcc)
+- Teste de carga:
+![image](https://github.com/user-attachments/assets/59f4551e-df53-4ce6-a326-786212072871)
+  - Comando no terminal windows: while ($true) { curl http://10.0.0.11:32000 } 
+- Quando chega a 50% cria novas replicas:
+![image](https://github.com/user-attachments/assets/5c72c020-ac9f-49bc-bdf9-f6fc084e5dca)
+![image](https://github.com/user-attachments/assets/f011b24f-0676-4207-809d-623d4d4ca642)
+![image](https://github.com/user-attachments/assets/71fa04ba-220f-463e-9da1-ef3ac2649e83)
+- Uso da cpu aumentando:
+![image](https://github.com/user-attachments/assets/dd244a49-94ed-4971-bd2a-5c37ec8b9a3c)
 
 #### Spark com Kubernetes
 ##### Como funciona
