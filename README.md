@@ -29,9 +29,14 @@ Em resumo, Kubernetes é uma solução poderosa para automatizar a implantação
   - O script contém todos os comandos utilizados pelo grupo para a instalação das configurações;
   - Ele está disponível na pasta do projeto;
   - Esse arquivo deve ser executado nas três máquinas: master, worker01 e worker 02, com o comando:
-  ```bash
-  sudo ./common.sh
-  ```
+    ```bash
+    sudo ./common.sh
+    ```
+  - Para fazer com que o swapoff tem q tá desligado pros nós do cluster conectarem, dê o comando:
+    ```bash
+    sudo nano /etc/fstab
+    ```
+    E comente a linha do swap
 2. Criação do script de configuração da master `master.sh`:
   - O script contém todos os comandos utilizados pelo grupo para a configuração da máquina master;
   - Ele está disponível na pasta do projeto;
