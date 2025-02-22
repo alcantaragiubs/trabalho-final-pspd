@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 #define MASTER 0
-#define TAM 900000
+#define TAM 300
 
 int main(int argc, char** argv) {
 
@@ -19,8 +19,8 @@ int main(int argc, char** argv) {
     int rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
-    // char hostname[256];
-    // gethostname(hostname, sizeof(hostname));
+    char hostname[256];
+    gethostname(hostname, sizeof(hostname));
 
     //printf("Hello from rank %d out of %d on %s\n", rank, size, hostname);
 
@@ -43,6 +43,7 @@ int main(int argc, char** argv) {
     // Corrigido: Somar os valores do vetor recebido
     for (int i = 0; i < chunk; i++) {
         soma += recebido[i];
+        sleep(1);
     }
 
     if (rank == MASTER) {
@@ -55,9 +56,8 @@ int main(int argc, char** argv) {
         printf("Soma total: %d\n", soma_total);
     } 
     else {
-        // Envia a soma parcial para o processo MASTER
         MPI_Send(&soma, 1, MPI_INT, MASTER, 0, MPI_COMM_WORLD);
-        
+        // Envia a soma parcial para o processo MASTER
     }
 
     MPI_Finalize();

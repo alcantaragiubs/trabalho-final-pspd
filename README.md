@@ -268,41 +268,41 @@ A integração do Apache Spark com Kubernetes permite executar cargas de trabalh
     Pi is roughly 3.14159265358979
     ```
     
-## MPI/OpenMP com Kubernetes
-### Como funciona
+#### MPI/OpenMP com Kubernetes
+
+Foi criado duas aplicações em c para testar a tolerância de falha e performace do kubernetes. A estrutura, pastas e arquivos estão no /mpi. A fim de estudas a aplicação foi desenvolvido testes com docker compose para melhor desenvolvimento.
+
+No arquivo [README](./mpi/REAMDE.md) apresenta como configurar e realizar os testes.
+
+O projeto consiste nos seguintes arquivos principais:
+
+- `Dockerfile` → Define a imagem base para os containers MPI.
+- `setup.sh` → Script que configura o ambiente MPI dentro dos containers.
+- `docker-compose.yaml` → Configuração original para Docker Compose.
+- `mpi-hostfile-configmap.yaml` → Gera dinamicamente o arquivo de hosts (`hostfile`) para a execução do MPI.
+- `mpi-deployment.yaml` → Configura os pods MPI no Kubernetes e expõe as portas SSH.
+
+##### Como funciona
 A integração do Spark com o Kubernetes...
 ##### Passo a Passo de Montagem 
 
 ##### Testes e Resultados
-###### 1. Teste de Carga
-O teste foi feito
+
+O roteiro de testes e como foi realizado se encontra no [README](./mpi/REAMDE.md)
+###### 1. Teste de performaca
 
 Resultados Apresentdos:
 
-###### 2. Teste de Performance
-O teste foi feito
+![Soma do vetor](./mpi/teste_mpi_img/hello.jpeg)
+
+###### 2. Teste de tolerância de erro
 
 Resultados Apresentados:
 
-###### 3. Teste de Alta Disponibilidade
-O teste foi feito
+![ip pos](./mpi/teste_mpi_img/ip_pods.jpeg)
+![ip pos](./mpi/teste_mpi_img/dell_pod.jpeg)
+![ip pos](./mpi/teste_mpi_img/erro.jpeg)
 
-Resultados Apresentados:
-
-###### 4. Teste de Escalabilidade
-O teste foi feito
-
-Resultados Apresentados:
-
-###### 5. Teste de Orquestração
-O teste foi feito
-
-Resultados Apresentados:
-
-###### 6. Teste de Escalonamento
-O teste foi feito
-
-Resultados Apresentados:
 
 ### Cloud Native
 ### Introdução 

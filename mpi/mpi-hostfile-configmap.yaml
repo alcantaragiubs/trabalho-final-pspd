@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mpi-hostfile
+data:
+  generate-hostfile.sh: |
+    #!/bin/bash
+    kubectl get pods -o wide -l app=mpi-container | awk 'NR>1 {print $6, "slots=2"}' > /hostfile

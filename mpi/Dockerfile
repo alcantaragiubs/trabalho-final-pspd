@@ -17,8 +17,10 @@ RUN echo "    UserKnownHostsFile /dev/null" >> /etc/ssh/ssh_config
 COPY ./keys /root/.ssh/
 COPY ./keys/id_rsa.pub /root/.ssh/authorized_keys
 COPY ./hello.c /
+COPY ./falha.c /
 
 RUN mpicc hello.c -o hello
+RUN mpicc falha.c -o falha
 
 RUN chmod 700 /root/.ssh && chmod 600 /root/.ssh/authorized_keys
 
