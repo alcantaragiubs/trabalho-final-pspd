@@ -307,12 +307,59 @@ Cloud Native é
 
 #### Anexos
 ##### Manual de instalação das VMs 
-
+- Pré-Requisitos:
+  - [Virtual Box](https://www.virtualbox.org/wiki/Downloads)
+  - [Vagrant](https://developer.hashicorp.com/vagrant/install)
+- Após baixar o Vagrant, execute:
+    ```bash
+      mkdir apache-vm && cd apache-vm
+      vagrant init bento/ubuntu-22.04 
+    ```
+  - Modifique o Vagrantfile para:
+    ```bash
+        Vagrant.configure("2") do |config|
+          config.vm.provision "shell", inline: <<-SHELL
+              apt-get update -y
+              echo "10.0.0.10  master-node" >> /etc/hosts
+              echo "10.0.0.11  worker-node01" >> /etc/hosts
+              echo "10.0.0.12  worker-node02" >> /etc/hosts
+          SHELL
+          
+          config.vm.define "master-spark" do |master|
+            master.vm.box = "bento/ubuntu-22.04"
+            master.vm.hostname = "master-node"
+            master.vm.network "private_network", ip: "10.0.0.10"
+            master.vm.provider "virtualbox" do |vb|
+                vb.memory = 8192 
+                vb.cpus = 4
+            end
+          end
+        
+          (1..2).each do |i|
+        
+          config.vm.define "node0#{i}-spark" do |node|
+            node.vm.box = "bento/ubuntu-22.04"
+            node.vm.hostname = "worker-node0#{i}"
+            node.vm.network "private_network", ip: "10.0.0.1#{i}"
+            node.vm.provider "virtualbox" do |vb|
+                vb.memory = 4096
+                vb.cpus = 2
+            end
+          end
+          
+          end
+        end
+    ```
+  - Após, execute para subir as VMs:
+    ```bash
+      vagrant up 
+    ```
 #### Configuração do Java openJDK11
 Para instalar o Java openJDK11 execute os seguintes comandos
 ```bash
   sudo apt update
   sudo apt install openjdk-11-jdk
+  java -version
   ```
 ##### Configuração do Docker no Kubernetes
 ```bash
