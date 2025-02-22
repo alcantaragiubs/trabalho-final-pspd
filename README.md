@@ -28,6 +28,9 @@ Além da estrutura básica, Kubernetes possui mecanismos para gerenciar a comuni
 
 Em resumo, Kubernetes é uma solução poderosa para automatizar a implantação, escala e operação de aplicativos baseados em contêineres. Ele simplifica a gestão da infraestrutura, garantindo eficiência, flexibilidade e alta disponibilidade para aplicações modernas. [1]
 
+![image](https://github.com/user-attachments/assets/c295adb0-33f0-47f0-ba79-26536bf32155)
+
+
 ##### Passo a Passo de Montagem 
 1. Criação do script de instalação básica do Kubernetes `common.sh`:
   - O script contém todos os comandos utilizados pelo grupo para a instalação das configurações;
@@ -184,10 +187,13 @@ Em resumo, Kubernetes é uma solução poderosa para automatizar a implantação
 
 #### Spark com Kubernetes
 ##### Como funciona
-A integração do Spark com o Kubernetes...
+A integração do Apache Spark com Kubernetes permite executar cargas de trabalho distribuídas de processamento de dados em um cluster Kubernetes, aproveitando seus recursos de escalabilidade e orquestração.
+
+![image](https://github.com/user-attachments/assets/416288c8-fab7-45d0-b472-0538e5985ad0)
+
 ##### Passo a Passo de Montagem 
 1. Instale o Apache Spark dentro da sua master:
-  - Pré requisitos: JAVA open SDK 11; Docker instalado
+  - Pré requisitos: [JAVA open SDK 11; Docker instalado](#anexos)
   - Rode os seguintes comandos:
     ```bash
     sudo mkdir -p /opt/spark
