@@ -51,9 +51,8 @@ Em resumo, Kubernetes é uma solução poderosa para automatizar a implantação
     kubeadm token create --print-join-command
     ```
   O último comando retornará algo como:
-    ```bash
-    kubeadm join 10.0.0.10:6443 --token <TOKEN>  --discovery-token-ca-cert-hash <HASH SHA-256 >
-    ```
+  
+        kubeadm join 10.0.0.10:6443 --token <TOKEN>  --discovery-token-ca-cert-hash <HASH SHA-256 >
 3. Criação dos nós workers:
   - Em ambos os workrs, rode o comando que recebeu no print:
     * Obs: Recomenda-se a utilização de sudo para prevenir erros de permissão
