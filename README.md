@@ -215,16 +215,14 @@ A integração do Spark com o Kubernetes...
   ```
 6. Execute o job Spark:
   ```bash
-  /opt/spark/bin/spark-submit \
-    --master k8s://https://<IP DA MASTER>:<PORTA DA MASTER> \
-    --deploy-mode client \ 
+/opt/spark/bin/spark-submit \
+    --master k8s://<IP DA MASTER>:<PORTA DA MASTER> \
+    --deploy-mode cluster \
     --name spark-test \
     --class org.apache.spark.examples.SparkPi \
     --conf spark.executor.instances=3 \
     --conf spark.kubernetes.container.image=apache/spark:latest \
-    --conf spark.eventLog.enabled=true \
-    --conf spark.eventLog.dir=file:///tmp/spark-events \
-    local:///<LOCAL DO JAR>
+    local:///opt/spark/examples/jars/spark-examples_<VERSAO DO JAR>
   ```
   - Verifique o histórico do job na URL: [<IP DA MASTER>:18080](<IP DA MASTER>:18080)
   - Esse comando submete um job Spark ao Kubernetes para calcular uma aproximação do número π. Se bem sucedido ele retornará:
