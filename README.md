@@ -76,7 +76,7 @@ Em resumo, Kubernetes é uma solução poderosa para automatizar a implantação
     kubectl apply -f sample-app.yaml
     kubectl top nodes
     ```
-  - Entre na URL: [https://localhost:32000](https://localhost:32000)
+  - Entre na URL: [https://10.0.0.1:32000](https://localhost:32000)
 ##### Criação do Dashboard de Monitoramento:
 - Instalação do `helm`:
   ```bash
@@ -189,19 +189,8 @@ A integração do Spark com o Kubernetes...
     export PATH=$PATH:$SPARK_HOME/bin 
     source ~/.bashrc
     spark-submit --version
-    ```
-2. Se não tiver o Docker instalado, instale-o:
-  ```bash
-  sudo apt update && sudo apt upgrade -y
-  sudo apt install -y ca-certificates curl gnupg
-  sudo install -m 0755 -d /etc/apt/keyrings
-  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo tee /etc/apt/keyrings/docker.asc > /dev/null
-  echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-  sudo apt update
-  sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-  docker --version
-  ```
-3. Baixe a imagem mais recente do Spark:
+    ```  
+2. Baixe a imagem mais recente do Spark:
   ```bash
   sudo docker pull apache/spark:latest
   ```
@@ -319,6 +308,20 @@ Cloud Native é
 #### Anexos
 ##### Manual de instalação das VMs 
 
-#### Configuração do Java JDK11
-
+#### Configuração do Java openJDK11
+Para instalar o Java openJDK11 execute os seguintes comandos
+```bash
+  sudo apt update
+  sudo apt install openjdk-11-jdk
+  ```
 ##### Configuração do Docker no Kubernetes
+```bash
+  sudo apt update && sudo apt upgrade -y
+  sudo apt install -y ca-certificates curl gnupg
+  sudo install -m 0755 -d /etc/apt/keyrings
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo tee /etc/apt/keyrings/docker.asc > /dev/null
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  sudo apt update
+  sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+  docker --version
+  ```
