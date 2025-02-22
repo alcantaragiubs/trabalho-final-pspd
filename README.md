@@ -76,7 +76,7 @@ Em resumo, Kubernetes é uma solução poderosa para automatizar a implantação
     kubectl top nodes
     kubectl apply -f sample-app.yaml
     ```
-  - Entre na URL: [https://10.0.0.1:32000](https://localhost:32000)
+  - Entre na URL: https://<IP DA MAQUINA>:32000
 ##### Criação do Dashboard de Monitoramento:
 - Instalação do `helm`:
   ```bash
@@ -152,25 +152,31 @@ Em resumo, Kubernetes é uma solução poderosa para automatizar a implantação
     * Obs: O dashbaord foi criado utilizando-se a documentação oficial do Kubernetes [2].
 
 ##### Testes e Resultados
-###### 1. Teste de Escalabilidade
-O teste foi feito
+###### 1. Teste de Alta Disponibilidade e Orquestração
+- Verificando os pods criados:
+![image](https://github.com/user-attachments/assets/1edc5216-ed0c-4e0e-a3d5-df2a99acde45)
+- Simulando falha no pod:
+![image](https://github.com/user-attachments/assets/88b71365-2fa4-42a0-a6f2-048fc5e1d43f)
+- Kubernetes recriando o pod automaticamente:
+![image](https://github.com/user-attachments/assets/d7790ecb-6063-4213-b8eb-24c61ae02758)
+- Visualização no kubernetes dashboard:
+![image](https://github.com/user-attachments/assets/1f7a4fb4-74f4-4606-b592-14680f59ae9d)
+- Simulando a queda de um nó worker:
+![image](https://github.com/user-attachments/assets/ed2fd8cc-34d1-4bb2-ba71-f64fb8f45377)
+- Resultado no dashboard:
+![image](https://github.com/user-attachments/assets/bab1db0d-9f3f-4d9c-a4d0-ece625dce744)
+- O pod ficou pendente:
+![image](https://github.com/user-attachments/assets/9a6c89de-2271-4fed-8088-021ff78490aa)
+  - Obs: Caso o pod ainda esteja pendente e suba o worker de volta ele volta ao estado de running
+- Criou um novo pod no worker:
+![image](https://github.com/user-attachments/assets/92fd6c3d-9ea8-4359-9a56-ecd0806325cb)
+  - Obs: Caso o pod tenha sido terminado, ele não cria o pod no worker ao subir de novo
+- O pod foi deletado:
+![image](https://github.com/user-attachments/assets/86210552-8296-4b6c-a2ab-1512aa7015a8)
+- CPU ao longo do tempo:
+![image](https://github.com/user-attachments/assets/fd156a13-7061-4bef-87e6-0f56a9146e86)
 
-Resultados Apresentados:
-
-###### 2. Teste de Orquestração
-O teste foi feito
-
-Resultados Apresentados:
-
-###### 3. Teste de Alta Disponibilidade
-O teste foi feito
-
-Resultados Apresentados:
-
-###### 4. Teste de Escalonamento
-O teste foi feito
-
-Resultados Apresentados:
+###### 2. Teste de Escalabilidade e Escalonamento:
 
 #### Spark com Kubernetes
 ##### Como funciona
