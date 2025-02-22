@@ -20,13 +20,13 @@ Para a realização da atividade proposta
 
 #### Cluster Kubernetes
 ##### O que é 
-Kubernetes é uma plataforma de código aberto, portátil e extensível para gerenciar cargas de trabalho e serviços conteinerizados. Ele facilita a configuração declarativa e a automação, permitindo que aplicações sejam executadas de forma eficiente e escalável. Com um ecossistema em rápido crescimento, Kubernetes oferece suporte a diversas ferramentas e serviços que auxiliam na administração e no funcionamento do cluster. [1]
+Kubernetes é uma plataforma de código aberto, portátil e extensível para gerenciar cargas de trabalho e serviços conteinerizados. Ele facilita a configuração declarativa e a automação, permitindo que aplicações sejam executadas de forma eficiente e escalável. Com um ecossistema em rápido crescimento, Kubernetes oferece suporte a diversas ferramentas e serviços que auxiliam na administração e no funcionamento do cluster. [11]
 
-Um cluster Kubernetes é formado por um conjunto de máquinas que trabalham juntas para executar aplicações em contêineres. Ele é composto por um plano de controle, responsável por gerenciar o cluster, manter o estado desejado e agendar workloads, e pelos nós workers, que são responsáveis por executar os contêineres e as aplicações. Dentro dos nós, os pods representam a menor unidade implantável e podem conter um ou mais contêineres, garantindo flexibilidade na execução das cargas de trabalho. [1]
+Um cluster Kubernetes é formado por um conjunto de máquinas que trabalham juntas para executar aplicações em contêineres. Ele é composto por um plano de controle, responsável por gerenciar o cluster, manter o estado desejado e agendar workloads, e pelos nós workers, que são responsáveis por executar os contêineres e as aplicações. Dentro dos nós, os pods representam a menor unidade implantável e podem conter um ou mais contêineres, garantindo flexibilidade na execução das cargas de trabalho. [11]
 
-Além da estrutura básica, Kubernetes possui mecanismos para gerenciar a comunicação entre as aplicações por meio de serviços, balanceamento de carga e recursos de rede. Também oferece opções para armazenamento, permitindo que os dados sejam mantidos de forma persistente ou temporária conforme a necessidade das aplicações. Para garantir a segurança, Kubernetes disponibiliza diversas configurações e políticas que ajudam a proteger os workloads e a definir boas práticas de administração do cluster. [1]
+Além da estrutura básica, Kubernetes possui mecanismos para gerenciar a comunicação entre as aplicações por meio de serviços, balanceamento de carga e recursos de rede. Também oferece opções para armazenamento, permitindo que os dados sejam mantidos de forma persistente ou temporária conforme a necessidade das aplicações. Para garantir a segurança, Kubernetes disponibiliza diversas configurações e políticas que ajudam a proteger os workloads e a definir boas práticas de administração do cluster. [11]
 
-Em resumo, Kubernetes é uma solução poderosa para automatizar a implantação, escala e operação de aplicativos baseados em contêineres. Ele simplifica a gestão da infraestrutura, garantindo eficiência, flexibilidade e alta disponibilidade para aplicações modernas. [1]
+Em resumo, Kubernetes é uma solução poderosa para automatizar a implantação, escala e operação de aplicativos baseados em contêineres. Ele simplifica a gestão da infraestrutura, garantindo eficiência, flexibilidade e alta disponibilidade para aplicações modernas. [11]
 
 ![image](https://github.com/user-attachments/assets/f13e50c9-beed-48a1-875c-41ab9c8cd49e)
 
@@ -156,7 +156,7 @@ Em resumo, Kubernetes é uma solução poderosa para automatizar a implantação
   ```bash
   kubectl -n kubernetes-dashboard create token admin-user
   ```
-    * Obs: O dashbaord foi criado utilizando-se a documentação oficial do Kubernetes [2].
+    * Obs: O dashbaord foi criado utilizando-se a documentação oficial do Kubernetes [12].
 
 ##### Testes e Resultados
 ###### 1. Teste de Alta Disponibilidade e Orquestração
@@ -335,9 +335,18 @@ Cloud Native é
 ##### Autoavaliação 
 
 ##### Referências
-[1] KUBERNETES. Conceitos. Disponível em: [https://kubernetes.io/docs/concepts/](https://kubernetes.io/docs/concepts/). Acesso em: 20 fev. 2025.
-
-[2] KUBERNETES. Dashboard. Disponível em: [https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/). Acesso em: 20 fev. 2025. 
+[1] GOOGLE CLOUD. What is Cloud Native? Disponível em: [https://cloud.google.com/learn/what-is-cloud-native](https://cloud.google.com/learn/what-is-cloud-native). Acesso em: 19 fev. 2025.  
+[2] DYNATRACE. Cloud Native Architecture. Disponível em: [https://www.dynatrace.com/knowledge-base/cloud-native-architecture](https://www.dynatrace.com/knowledge-base/cloud-native-architecture). Acesso em: 19 fev. 2025.  
+[3] AWS. What is Cloud Native? Disponível em: [https://aws.amazon.com/what-is/cloud-native](https://aws.amazon.com/what-is/cloud-native). Acesso em: 20 fev. 2025.  
+[4] CURSA. Containers e a sua Relação com DevOps: Docker e Kubernetes. Disponível em: [https://cursa.app/pt/pagina/containers-e-a-sua-relacao-com-devops-docker-e-kubernetes](https://cursa.app/pt/pagina/containers-e-a-sua-relacao-com-devops-docker-e-kubernetes). Acesso em: 20 fev. 2025.  
+[5] SERVICE. Como o Kubernetes Potencializa os Benefícios do DevOps. Disponível em: [https://service.com.br/como-o-kubernetes-potencializa-os-beneficios-do-devops/](https://service.com.br/como-o-kubernetes-potencializa-os-beneficios-do-devops/). Acesso em: 21 fev. 2025.  
+[6] MARTITEC. Principais Benefícios do Kubernetes. Disponível em: [https://martitec.com.br/principais-beneficios-do-kubernetes/](https://martitec.com.br/principais-beneficios-do-kubernetes/). Acesso em: 21 fev. 2025.  
+[7] AWS. The Difference Between Monolithic and Microservices Architecture. Disponível em: [https://aws.amazon.com/pt/compare/the-difference-between-monolithic-and-microservices-architecture](https://aws.amazon.com/pt/compare/the-difference-between-monolithic-and-microservices-architecture). Acesso em: 21 fev. 2025.  
+[8] MICROSOFT. Observability Patterns. Disponível em: [https://learn.microsoft.com/pt-pt/dotnet/architecture/cloud-native/observability-patterns](https://learn.microsoft.com/pt-pt/dotnet/architecture/cloud-native/observability-patterns). Acesso em: 21 fev. 2025.  
+[9] NETFLIX TECH BLOG. Announcing Bpftop: Streamlining eBPF Performance Optimization. Disponível em: [https://netflixtechblog.com/announcing-bpftop-streamlining-ebpf-performance-optimization-6a727c1ae2e5](https://netflixtechblog.com/announcing-bpftop-streamlining-ebpf-performance-optimization-6a727c1ae2e5). Acesso em: 19 fev. 2025.  
+[10] FACEBOOK ENGINEERING. Open-Sourcing Katran: A Scalable Network Load Balancer. Disponível em: [https://engineering.fb.com/2018/05/22/open-source/open-sourcing-katran-a-scalable-network-load-balancer](https://engineering.fb.com/2018/05/22/open-source/open-sourcing-katran-a-scalable-network-load-balancer). Acesso em: 20 fev. 2025.  
+[11] KUBERNETES. Conceitos. Disponível em: [https://kubernetes.io/docs/concepts/](https://kubernetes.io/docs/concepts/). Acesso em: 20 fev. 2025.
+[12] KUBERNETES. Dashboard. Disponível em: [https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/). Acesso em: 20 fev. 2025. 
 
 #### Anexos
 ##### Manual de instalação das VMs 
