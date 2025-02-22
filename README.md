@@ -72,18 +72,27 @@ Em resumo, Kubernetes é uma solução poderosa para automatizar a implantação
     kubectl get nodes
     kubectl label node <nome-do-node> node-role.kubernetes.io/worker=worker
     ```
-  5. Criação da aplicação nginx:
-    -  Primeiro entre na pasta `manifests`:
-    ```bash
-    cd ../manifests
-    ```
-  - Após, dê os comandos:
-    ```bash
-    kubectl apply -f metrics-server.yaml
-    kubectl top nodes
+  5. Ativação dos metrics:
+
+- Primeiro entre na pasta manifests:
+
+  bash
+  cd ../manifests
+  
+
+- Após, dê os comandos:
+  bash
+  kubectl apply -f metrics-server.yaml
+  kubectl top nodes
+  
+
+6. Criando app nginx
+
+- Ainda na pastas manifests de o comando:
+  bash
     kubectl apply -f sample-app.yaml
-    ```
-  - Entre na URL: https://<IP DA MAQUINA>:32000
+  
+- Entre na URL: <IP DA MAQUINA>:32000
 ## Criação do Dashboard de Monitoramento:
 - Instalação do `helm`:
   ```bash
@@ -101,6 +110,10 @@ Em resumo, Kubernetes é uma solução poderosa para automatizar a implantação
   ```bash
   kubectl -n kubernetes-dashboard port-forward svc/kubernetes-dashboard-kong-proxy 8443:443
   ```
+  * Caso esteja usando VM na maquina host colocar o seguinte comando:
+    ```bash
+    ssh -L 8443:localhost:8443 vagrant@<ip da maquina>
+    ```
 - Acesse o link disponibilizado do dashboard via: [https://localhost:8443/](https://localhost:8443/)
 - Criação do Usuário Admin `dashboard-adminuser.yaml`:
   - Criar o arquivo:
@@ -197,6 +210,7 @@ Em resumo, Kubernetes é uma solução poderosa para automatizar a implantação
 - Teste de carga:
 ![image](https://github.com/user-attachments/assets/59f4551e-df53-4ce6-a326-786212072871)
   - Comando no terminal windows: while ($true) { curl http://10.0.0.11:32000 } 
+- Antes de usar hpa: kubectl autoscale deployment nginx --cpu-percent=50 --min=1 --max=5
 - Quando chega a 50% cria novas replicas:
 ![image](https://github.com/user-attachments/assets/5c72c020-ac9f-49bc-bdf9-f6fc084e5dca)
 ![image](https://github.com/user-attachments/assets/f011b24f-0676-4207-809d-623d4d4ca642)
