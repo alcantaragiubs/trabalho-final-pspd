@@ -115,6 +115,27 @@ Em resumo, Kubernetes é uma solução poderosa para automatizar a implantação
       name: admin-user
       namespace: kubernetes-dashboard
     ```
+    Se não funcionar:
+    ```bash
+    apiVersion: v1
+    kind: ServiceAccount  
+    metadata:
+      name: admin-user
+      namespace: kubernetes-dashboard
+    ---
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+      name: admin-user
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cluster-admin
+    subjects:
+    - kind: ServiceAccount
+      name: admin-user
+      namespace: kubernetes-dashboard
+    ```
   - Aplique as mudanças:
     ```bash
     kubectl apply -f dashboard-adminuser.yaml
@@ -291,3 +312,10 @@ Cloud Native é
 [1] KUBERNETES. Conceitos. Disponível em: [https://kubernetes.io/docs/concepts/](https://kubernetes.io/docs/concepts/). Acesso em: 20 fev. 2025.
 
 [2] KUBERNETES. Dashboard. Disponível em: [https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/). Acesso em: 20 fev. 2025. 
+
+#### Anexos
+##### Manual de instalação das VMs 
+
+#### Configuração do Java JDK11
+
+##### Configuração do Docker no Kubernetes
