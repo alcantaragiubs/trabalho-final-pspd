@@ -9,7 +9,11 @@
 - Valderson Pontes da Silva Junior - 190020521
 
 #### Introdução
-Este relatório tem como objetivo documentar.
+O avanço da computação em nuvem e o uso crescente de contêineres têm impulsionado a adoção de tecnologias como o Kubernetes, que se tornou uma plataforma essencial para a orquestração de aplicações distribuídas. Neste contexto, o presente projeto busca explorar as capacidades de computação paralela e distribuída do Kubernetes, testando seu desempenho e tolerância a falhas em diferentes cenários.
+
+O objetivo principal é avaliar o comportamento do Kubernetes em um ambiente de cluster self-hosted, composto por um nó mestre e pelo menos dois nós workers. Além disso, serão realizados experimentos integrando o Kubernetes com tecnologias complementares, como Apache Spark e bibliotecas MPI/OMP, analisando como cada abordagem impacta a escalabilidade, a resiliência e a eficiência do processamento distribuído.
+
+A execução do projeto envolve a instalação e configuração do cluster Kubernetes, a implementação de uma aplicação de teste e a condução de experimentos que simulam falhas e variações na carga de trabalho. A partir dos resultados obtidos, será possível avaliar os benefícios e desafios do uso do Kubernetes para computação paralela e distribuída, bem como sua integração com outras tecnologias.
 
 #### Metodologia
 Para a realização da atividade proposta
