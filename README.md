@@ -248,7 +248,6 @@ A integração do Apache Spark com Kubernetes permite executar cargas de trabalh
     --conf spark.kubernetes.container.image=apache/spark:latest \
     local:///opt/spark/examples/jars/spark-examples_<VERSAO DO JAR>
   ```
-  - Verifique o histórico do job na URL: [<IP DA MASTER>:18080](<IP DA MASTER>:18080)
   - Esse comando submete um job Spark ao Kubernetes para calcular uma aproximação do número π. Se bem sucedido ele retornará:
     ```bash
     INFO DAGScheduler: Job 0 finished: reduce at SparkPi.scala:36, took 20.123 s
